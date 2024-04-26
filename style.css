@@ -328,7 +328,7 @@ input:checked ~ .bubble::after{
 } */
 
 body{
-    margin: 20px auto;
+    margin: 50px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     background: rgb(191,104,169)    
 }
@@ -376,6 +376,9 @@ p{
 
 #landing-page-signUp-button{
     width: 500px;
+    height: 50px;
+    border: none;
+    border-radius: 30px;
     background-color: rgb(232,16,138);
     margin-left: 250px;
 }
