@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MentorPage</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="mediaQueries.css">
+</head>
+<body>
+    <div id="mentorship-page-container">
+        <nav id="mentorpage-nav">
+            <div class="logo"><img src="Images/Logo.png" alt="ChixMeet Logo" id="chixmeet-logo"><p id="logo-name" style="color: black;">Chix Meet</p></div>
+            <ul class="nav-links">
+                <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+                <li><a href="personal-profile.html">Personal Profile</a></li>
+                <li><a href="achievements.html">Achievements</a></li>
+                <li><a href="todo.html">TodoList</a></li>
+                <li><a href="goals.html">Goals</a></li>
+                
+    
+            </ul>
+    
+        </nav>
+    
+        <nav id="hamburger-nav">
+            <div class="logo"><img src="Images/Logo.png" alt="ChixMeet Logo" id="chixmeet-logo"><p id="logo-name" style="color: black;">Chix Meet</p></div>
+            <div class="hamburger-menu">
+                <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+    
+            <div class="menu-links">
+                <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+                <li><a href="personal-profile.html" onclick="toggleMenu()">PersonalProfile</a></li>
+                <li><a href="achievements.html" onclick="toggleMenu()">Achievements</a></li>
+                <li><a href="todo.html" onclick="toggleMenu()">Todo</a></li>
+                <li><a href="goals.html" onclick="toggleMenu()">Goals</a></li>
+            </div>
+            </div>
+    
+        </nav>
+    
+        <section id="profile">
+            <div class="section__pic-container">
+                <img src="Images/IMG-20231202-WA0002.jpg" alt="Mentor profile picture" class="florenceimage";>
+            </div>
+          
+        </section>
+        <div id="mentor-details-container">
+            <div class="personal-details-container">
+                <h1 id="personal-details-heading">Personal Details</h1>
+               <ul>
+               <p class="details-paragraph"><span class="line-title">Name:</span> Florence Wangui</p><br>
+                <p class="details-paragraph"><span class="line-title">Nationality:</span> Kenyan</p><br>
+                <p class="details-paragraph"><span class="line-title">Interests:</span> In her free time, Florence will be sleeping,
+                    swimmming and listening to music. She enjoys company with her friends
+                </p></li>
+                
+               </ul>
+            </div>
+            <div class="personal-details-container">
+                <h1 id="personal-details-heading">Career Details</h1>
+                <ul>
+                 <p class="details-paragraph"><span class="line-title">Proffession:</span> Quality Engineer</p><br>
+                 <p class="details-paragraph"><span class="line-title">Place Of Work:</span> Antara Health</p><br>
+                 <p class="details-paragraph"><span class="line-title">Background:</span> AkiraChix Alumni</p><br>
+                 <p class="details-paragraph"><img src="Images/linkedin.png" alt="Florence's linkedIn profile"
+                    class="icon" onclick="location.href='https://www.linkedin.com/in/florence-nyokabi/'"></p></li>
+                 
+                </ul>
+            </div>
+           
+
+            <!-- <div id="socials-container">
+                <img src="Images/linkedin.png" alt="Florence's linkedIn profile"
+                 class="icon" onclick="location.href='https://www.linkedin.com/in/florence-nyokabi/'">
+            </div> -->
+        </div>
+
+    </div>
+    
+
+    <script src="script.js"></script>
+    
+</body>
+</html>

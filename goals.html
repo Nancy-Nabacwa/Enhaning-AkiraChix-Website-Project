@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style3.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <nav id="mentorpage-nav">
+        <div class="logo"><img src="Images/Logo.png" alt="ChixMeet Logo" id="chixmeet-logo"><p id="logo-name" style="color: black;">Chix Meet</p></div>
+        <ul class="nav-links">
+            <a href="mentorpage.html" onclick="toggleMenu()">MentorProfile</a>
+            <a href="personal-profile.html">Personal Profile</a>
+            <a href="achievements.html">Achievements</a>
+            <a href="todo.html">TodoList</a> 
+            
+
+        </ul>
+
+    </nav>
+
+    <nav id="hamburger-nav">
+        <div class="logo"><img src="Images/Logo.png" alt="ChixMeet Logo" id="chixmeet-logo"><p id="logo-name" style="color: black;">Chix Meet</p></div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="menu-links">
+            <a href="index.html" onclick="toggleMenu()">Home</a>
+            <a href="personal-profile.html" onclick="toggleMenu()">PersonalProfile</a>
+            <a href="achievements.html" onclick="toggleMenu()">Achievements</a>
+            <a href="todo.html" onclick="toggleMenu()">Todo</a>
+            <a href="goals.html" onclick="toggleMenu()">Goals</a>
+        </div>
+        </div>
+
+    </nav>
+    <div class="goals-container">
+        <h1>Goals</h1>
+        <button class="btn">Create Goals</button>
+        <div class="notes-container">
+            <!-- <p contenteditable="true" class="input-box">
+                <img src="Images/delete icon.png" alt="delete icon">
+            </p> -->
+        </div>
+    </div>
+      <script src="goals.js"></script>
+</body>
+</html>

@@ -1,0 +1,565 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.todo_list{
+    width: 100%;
+    max-width:540px;
+    background: white;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+    box-shadow:10px 10px 10px 10px  rgba(33,33,33,.7) ;
+
+
+}
+.todo_list h2{
+    color: rgb(232,16,138);
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.todo_list img{
+    width: 30px;
+    margin-left: 5px;
+}
+.todo_list_add_row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffc;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+.todo_list_add_row input{
+    flex:1;
+    border: none;
+    outline: none;
+    background: rgb(27,149,147);
+    border-radius: 30px;
+    height: 50px;
+    color: #fff;
+    padding: 10px;
+    font-weight: 14px;
+}
+.todo_list_add_row button{
+    border: none;
+    outline:none;
+    padding:16px 50px;
+    background: rgb(27,149,147);
+    color:#fff;
+    font-size: 16px;
+    border-radius: 40px;
+    cursor: pointer;
+
+}
+ul li{
+    list-style: none;
+    font-size: 17px;
+    padding:12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+ul li::before{
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    background-image: url(Images/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+}
+ul li.checked{
+    color: grey;
+    text-decoration: line-through;
+}
+ul li.checked::before{
+    background-image: url(Images/checked.png);
+}
+ul li span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+    color:gray;
+    line-height: 40px;
+    text-align: centre;
+    
+}
+
+
+/* 
+:root{
+    --primary: #EA40A4;
+    --classroom:#3A82EE;
+    --personal:var(--primary);
+    --light:#EEE;
+    --dark:#313154;
+    --danger:#ff5b57;
+    --grey: #888;
+
+    --shadow:0 1px 3px rgb(0,0,0,0.1);
+
+    --classroom-glow:0px 0px 4px rgba(58, 130, 238, 0.75);
+    --personal-glow:0px 0px 4px rgba(234, 64, 164, 0.75);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'montserrat',sans-serif;
+}
+
+input:not([type='radio']):not([type='checkbox']),button{
+    appearance: none;
+    border: none;
+    outline:none;
+    background:none;
+    cursor:initial;
+}
+
+body{
+    background: var(--light);
+    color: var(--dark);
+}
+
+section {
+    margin-top: 2rem;
+    margin-bottom:2rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    
+}
+
+h3{
+    color: var(--dark);
+    font-size: 1rem;
+    font-weight:400;
+    margin-bottom: 0.5rem;
+}
+
+h4{
+    color: var(--grey);
+    font-size: 14px;
+    font-weight:700;
+    margin-bottom:0.5rem;
+}
+
+.greeting .title{
+    display: flex;
+}
+
+.greeting .title input{
+    margin-left:0.5rem;
+    flex:1 1 0%;
+    min-width: 0;
+}
+
+.greeting .title,
+.greeting .title input{
+    color: var(--dark);
+    font-size:1.5rem;
+    font-weight:700;
+}
+
+.create_todo input[type='text']{
+    display:block;
+    width:100%;
+    font-size: 1.125rem;
+    padding: 1rem 1.5rem;
+    color: var(--dark);
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 1.5rem;
+}
+
+.create_todo .options{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    margin-bottom: 1.5rem;
+
+}
+.create_todo .options label{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+}
+
+input[type='radio'],
+input[type='checkbox']{
+    display: none;
+}
+
+.bubble{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 999px;
+    border: 2px solid var(--classroom);
+    box-shadow: var(--classroom-glow);
+}
+
+.bubble.personal{
+    border-color: var(--personal);
+    box-shadow: var(--personal-glow);
+}
+
+.bubble::after{
+    content:'';
+    display:block;
+    opacity:0;
+    width:opx;
+    height:0px;
+    background-color: var(--classroom);
+    box-shadow: var(--classroom-glow);
+    border-radius:50%;
+    transition:0.2s ease-in-out;
+
+}
+
+.bubble.personal::after{
+    background-color: var(--personal);
+    box-shadow:var(--personal-glow)
+}
+
+input:checked ~ .bubble::after{
+    width:10px;
+    height:10px;
+    opacity:1;
+}
+
+.create-todo .options label div{
+    color:var(--dark);
+    font-size:1.125rem;
+    margin-top: 1rem;
+}
+
+.create_todo input[type='submit']{
+    display:block;
+    width:100%;
+    font-size:1.125rem;
+    padding:1rem 1.5rem;
+    color:#fff;
+    background-color: var(--primary);
+    border-radius: 0.5rem;
+    box-shadow: var(--personal-glow);
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.create_todo input[type='submit']:hover{
+    opacity:0.75;
+}
+
+.todo_list .todo_item{
+    display:flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 1rem;
+}
+
+.todo_item label{
+    display: block;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.todo_item .todo_content{
+    flex:1 1 0%;
+}
+
+.todo_item .todo_content input{
+    color: var(--dark);
+    font-size: 1.125rem;
+}
+
+.todo_item .actions{
+    display:flex;
+    align-items: center;
+}
+
+.todo_item .actions button{
+    display:block;
+    padding:0.5rem;
+    border-radius: 0.25rem;
+    color: white;
+    cursor: pointer;
+    transition: o.2s ease-in-out;
+}
+
+.todo_item .actions button:hover{
+    opacity:0.75;
+}
+
+.todo_item .actions .edit{
+    margin-right: 0.5rem;
+    background-color: var(--primary);
+}
+
+.todo_item .actions .delete{
+    background-color: var(--danger);
+}
+
+.todo_item.done .todo_content input{
+    text-decoration: line-through;
+    color:var(--grey);
+} */
+
+body{
+    margin: 20px auto;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background: rgb(191,104,169)    
+}
+h2{
+    font-weight: bold;
+    font-size: 100px;
+    color: rgb(232,16,138);
+}
+p{
+    font-size:30px;
+    font-weight: normal;
+    font-family: 'Times New Roman', Times, serif;
+}
+#chixmeet{
+    color: rgb(232,16,138);
+}
+
+.greeting-container{
+    color: #000;
+    margin: 50px;
+    background: #fff;
+    text-align: center;
+    display: block;
+    height: 250px;
+    width: 90%;
+    padding: 20px;
+    box-shadow: 10px 10px 14px rgba(33,33,33,.7);
+
+}
+
+.description-container{
+    color: #000;
+    margin: 50px;
+    background: #fff;
+    display:block;
+    height: 350px;
+    width: 90%;
+    padding: 20px;
+    box-shadow: 10px 10px 14px rgba(33,33,33,.7);
+
+}
+#description-heading{
+    font-size:50px;
+}
+
+#landing-page-signUp-button{
+    width: 500px;
+    background-color: rgb(232,16,138);
+    margin-left: 250px;
+}
+#hello-greeting{
+    font-size: 50px;
+}
+h4{
+    font-size:30px;
+    margin-left:380px;
+    margin-top: 50px;
+    color: white;
+}
+#landing-page{
+    display: block;
+    margin: 50px;
+    box-shadow: 10px 10px 14px ;
+    background-color: #ffc;
+    height:180vh;
+}
+
+h4 a{
+    text-decoration: none;
+    color: rgb(232,16,138);
+}
+
+
+
+#signUp-form{
+    border-radius: 30px;
+    box-shadow: 10px 10px 14px rgba(33,33,33,.7);
+    background: #fff;
+    padding: 50px;
+    width:500px;
+    margin: 0% auto;
+    }
+
+#signUpform-h6 ,#signUpform-h1{
+    text-align: center;
+    color:rgb(232,16,138);
+}
+
+#signUpform-h6 a{
+    text-decoration: none;
+}
+
+    #button{
+       width:400px;
+       color: white;
+       background-color:rgb(232,16,138);
+       height: 50px;
+       border: none;
+       border-radius: 30px;
+       box-shadow:  10px 10px 14px rgba(33,33,33,.7);
+       
+    }
+
+    #button a{
+        text-decoration: none;
+        color: white;
+    }
+
+    
+    .signup-input{
+        padding:5px;
+        width:400px;
+        height: 30px;
+        border: none;
+        font-size: 10px;
+        box-shadow:10px 10px 14px rgba(33,33,33,.7);
+    }
+
+    .bottom{
+        margin-right: 80px auto;
+        text-align: center;
+        font-size: 10px;
+        max-width: 600px;
+        position: relative;
+    }
+
+    .bottom::before{
+       content: "";
+       display: block;
+       width: 220px;
+       background: black;
+       position: absolute;
+       left: 0;
+       top: 50%;
+    }
+
+    .bottom::after{
+        content: "";
+        display: block;
+        width: 220px;
+        background: black;
+        position: absolute;
+        right: 0;
+        top: 50%;
+    }
+     
+     #icons{
+        gap: 14px;
+        justify-content: space-between;
+     }
+
+    
+
+     @media only screen and (min-width: 620px) and (max-width: 768px) {
+        #landing-page-signUp-button{
+            margin-left: 80px;
+        }
+
+        h4{
+            margin-left:180px;
+            margin-top: 50px;
+        }
+        #landing-page{
+            height: 120%;
+        }
+     }
+
+     @media only screen and (max-width: 362px){
+        
+     }
+
+     @media only screen and (min-width: 362px) and (max-width: 425px) {
+        #landing-page{
+            margin-left: 10%;
+            width: 300px;
+        }
+        .greeting-container{
+            height: 400px;
+            width: 300px;
+            margin-left: -1px;
+        }
+        .description-container{
+            height: 750px;
+            width: 300px;
+            margin-left: -1px;
+            
+        }
+        #landing-page-signUp-button{
+            width: 200px;
+            background-color: rgb(232,16,138);
+            margin-left:50px;
+        }
+
+        h4{
+            font-size:20px;
+            margin-left:50px;
+            margin-top: 50px;
+        }
+
+     }
+     @media only screen and (min-width: 250px) and (max-width: 320px) {
+        #landing-page{
+            margin: 20px;
+            width:280px;
+            height:180vh;
+        }
+        .greeting-container{
+            height: 400px;
+            width: 280px;
+            margin-left: -1px;
+        }
+        .description-container{
+            height: 750px;
+            width: 280px;
+            margin-left: -1px;
+            
+        }
+        #landing-page-signUp-button{
+            width: 250px;
+            background-color: rgb(232,16,138);
+            margin-left:20px;
+        }
+        h4{
+            font-size:20px;
+            margin-left:50px;
+            margin-top: 50px;
+        }
+        
+     }
+
+
+
+
+/*Achievement*/

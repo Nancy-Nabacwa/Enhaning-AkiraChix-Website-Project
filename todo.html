@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO-list</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="mediaQueries.css">
+</head>
+<body>
+
+    <nav id="mentorpage-nav">
+        <div class="logo"><img src="Images/Logo.png" alt="ChixMeet Logo" id="chixmeet-logo"><p id="logo-name" style="color: black;">Chix Meet</p></div>
+        <ul class="nav-links">
+            <a href="personal-profile.html">Personal Profile</a>
+            <a href="acievements.html">Achievements</a>
+            <a href="goals.html">Goals</a>
+            <a href="mentorpage.html">MentorPage</a>
+            
+
+        </ul>
+
+    </nav>
+
+    <nav id="hamburger-nav">
+        <div class="logo"><img src="Images/Logo.png" alt="ChixMeet Logo" id="chixmeet-logo"><p id="logo-name" style="color: black;">Chix Meet</p></div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="menu-links">
+            <li><a href="personal-profile.html" onclick="toggleMenu()">PersonalProfile</a></li>
+            <li><a href="achievements.html" onclick="toggleMenu()">Achievements</a></li>
+            <li><a href="goals.html" onclick="toggleMenu()">Goals</a></li>
+            <li><a href="mentorpage.html" onclick="toggleMenu()">Mentorpage</a></li>
+        </div>
+        </div>
+
+    </nav>
+    
+
+    
+        <div class="todo_list">
+            <h2>Todo_list </h2>
+            <div class="todo_list_add_row">
+                <input type="text" id="todo_input_field" placeholder="Add your task....">
+                <button onclick="addTask()">Add</button>
+            </div>
+
+            <ul id="task_container">
+                <!-- <li class="checked">Task1</li>
+                <li>Task2</li>
+                <li>Task3</li> -->
+            </ul> 
+           
+
+        </div>
+
+    
+    <script src="script.js"></script>
+    
+</body>
+</html>
